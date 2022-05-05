@@ -203,6 +203,14 @@ HEADER
 .site-nav .link.current {
     color: var(--accent-color);
 }
+
+.border-bottom {
+    display: block;
+    border-bottom: var(--accent-color) solid 3px;
+    /* padding-bottom: 28px; */
+}
+
+
 /* contact links */
 .header .list {
     display: flex;
