@@ -353,11 +353,21 @@ SECTION FEATURES
     margin-right: 0;
 }
 
-.work .text {
-    width: 100%;
-    background-color: var(--secondary-background-color);
+.work .thumb {
+    position: relative;
+}
 
-    padding: 27px 82px;
+
+.work .text {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+    padding-top: 27px;
+    padding-bottom: 27px;
+    width: 100%;
+
+
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -365,7 +375,7 @@ SECTION FEATURES
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--primary-background-color);
-    
+    background-color: rgba(47, 48, 58, 0.8);
 }
 
 /*
@@ -473,6 +483,8 @@ SECTION CLIENTS
 
 .clients .list {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*clients logo svg*/
@@ -481,8 +493,6 @@ SECTION CLIENTS
     border: 1px solid var(--icon-cl);
     border-radius: 4px;
     padding: 16px 32px;
-    width: 170px;
-    height: 92px;
     fill: var(--icon-cl);
 }
 
@@ -495,6 +505,9 @@ SECTION CLIENTS
 .clients .item+.item {
     margin-left: 30px;
 }
+
+
+
 
 /*
 ---------------------------------------
@@ -643,6 +656,28 @@ PAGE PORTFOLIO
     margin-right: 0;
 }
 
+.portfolio .thumb {
+    position: relative;
+}
+
+.portfolio .thumb::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    opacity: 0;
+}
+
+.portfolio .item:hover .thumb::before {
+    opacity: 1;
+}
+
+.portfolio .item:hover .text {
+    opacity: 1;
+}
+
+
 .portfolio .link{
     display: block;
 }
@@ -655,7 +690,24 @@ PAGE PORTFOLIO
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.card {
+.portfolio .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+
+    padding: 63px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--primary-background-color);
+    opacity: 0;
+}
+
+.product-meta {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-top: none;
     padding: 20px 24px;
