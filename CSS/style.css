@@ -254,7 +254,8 @@ HEADER
     fill var(--transition-duration) var(--transition-timing-function);
 }
 
-.header .contact-link:hover {
+.header .contact-link:hover,
+.header .contact-link:focus {
     color: var(--accent-color);
     fill: var(--accent-color);
 }
@@ -312,8 +313,10 @@ SECTION HERO
     background-color: rgba(0, 0, 0, 0.2);
     
     opacity: 1;
-    transition: opacity var(--transition-duration) var(--transition-timing-function),
-    transform var(--transition-duration) var(--transition-timing-function);
+    transition: 
+    opacity var(--transition-duration) var(--transition-timing-function),
+    transform var(--transition-duration) var(--transition-timing-function),
+    visibility var(--transition-duration) var(--transition-timing-function);
 }
 
 .backdrop.is-hidden .modal {
@@ -322,6 +325,7 @@ SECTION HERO
 
 .backdrop.is-hidden {
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
 
